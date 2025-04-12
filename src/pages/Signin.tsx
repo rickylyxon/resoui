@@ -84,12 +84,12 @@ const Signin = () => {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute top-10 right-3 text-gray-400 hover:text-blue-400 transition-colors"
+                    className="absolute top-16 right-6 text-gray-400 hover:text-blue-400 transition-colors"
                   >
                     {showPassword ? (
-                      <LuEye size={20} />
-                    ) : (
                       <LuEyeClosed size={20} />
+                    ) : (
+                      <LuEye size={20} />
                     )}
                   </button>
                 )}
