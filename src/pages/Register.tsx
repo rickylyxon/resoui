@@ -10,6 +10,7 @@ import StructuralModelling from "../components/Forms/StructuralModelling";
 import Windmill from "../components/Forms/Windmill";
 import GroupCommonForm from "../components/Forms/GroupCommonForm";
 import GroupsForm from "../components/Forms/GroupsForm";
+import Reel from "../components/Forms/Reel";
 
 type OptionType = {
   value: string;
@@ -71,10 +72,12 @@ const options: OptionType[] = [
   { value: "fifa25", label: "FC25 (Gaming)" },
   { value: "hisdustanisong", label: "Hindustani (Voice of RESO)" },
   { value: "westernsong", label: "Western (Voice of RESO)" },
-  { value: "classicalfolkdance", label: "Classical & Folk (Dance Contest)" },
-  { value: "moderndance", label: "Modern Dance (Dance Contest)" },
+  { value: "classicalfolkdancegroup", label: "Classical & Folk Group (Dance Contest)" },
+  { value: "classicalfolkdancesolo", label: "Classical & Folk Solo (Dance Contest)" },
+  { value: "moderndancegroup", label: "Modern Dance Group (Dance Contest)" },
+  { value: "moderndancesolo", label: "Modern Dance Solo (Dance Contest)" },
   { value: "cosplay", label: "Cosplay Contest" },
-  { value: "reels", label: "Reel Contest" },
+  { value: "reel", label: "Reel Contest" },
   { value: "painting", label: "Painting (Spot Event)" },
   { value: "photography", label: "Photography (Spot Event)" },
   { value: "treasurehunt", label: "Treasure Hunt (Spot Event)" },
@@ -111,11 +114,12 @@ const Register = () => {
     mobilelegend: MobileLegend,
     structuralmodelling :StructuralModelling,
     windmill : Windmill,
-    moderndance : GroupCommonForm,
-    classicalfolkdance : GroupCommonForm,
     westernsong : GroupCommonForm,
+    moderndancegroup : GroupsForm,
+    classicalfolkdancegroup : GroupsForm,
     debate:GroupsForm,
-    quiz:GroupsForm
+    quiz:GroupsForm,
+    reel: Reel,
   };
 
   const SelectedComponent =
