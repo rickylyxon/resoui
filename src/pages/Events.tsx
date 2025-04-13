@@ -106,7 +106,7 @@ function InfiniteCarousel() {
                     if (!isCenter) {
                       position === 'left' ? prevSlide() : nextSlide();
                     } else {
-                      const token = localStorage.getItem('token');
+                      const token = localStorage.getItem('Authorization');
                       window.location.href = token ? '/register' : '/signup';
                     }
                   }}
