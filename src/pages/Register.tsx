@@ -6,6 +6,10 @@ import { Quantum } from "ldrs/react";
 import CommonForm from "../components/Forms/CommonForm";
 import axios from "../utils/axios";
 import { Toaster } from "react-hot-toast";
+import StructuralModelling from "../components/Forms/StructuralModelling";
+import Windmill from "../components/Forms/Windmill";
+import GroupCommonForm from "../components/Forms/GroupCommonForm";
+import GroupsForm from "../components/Forms/GroupsForm";
 
 type OptionType = {
   value: string;
@@ -80,6 +84,14 @@ const options: OptionType[] = [
     value: "structuralmodelling",
     label: "Structural Modelling (Technical Event)",
   },
+  {
+    value: "windmill",
+    label: "Windmill Design (Technical Event)",
+  },
+  {
+    value: "origami",
+    label: "Origami Design (Technical Event)",
+  },
   { value: "autocaddesign", label: "Autocad Design (Technical Event)" },
   { value: "codedebugging", label: "Code Debugging (Technical Event)" },
   { value: "codejumbling", label: "Code Jumbling (Technical Event)" },
@@ -97,6 +109,13 @@ const Register = () => {
   const specialComponents: Record<string, React.ElementType> = {
     bgmi: Bgmi,
     mobilelegend: MobileLegend,
+    structuralmodelling :StructuralModelling,
+    windmill : Windmill,
+    moderndance : GroupCommonForm,
+    classicalfolkdance : GroupCommonForm,
+    westernsong : GroupCommonForm,
+    debate:GroupsForm,
+    quiz:GroupsForm
   };
 
   const SelectedComponent =

@@ -36,7 +36,10 @@ function parseRules(ruleString: string): string[] {
     .map((rule) => rule.trim())
     .filter((rule) => rule.length > 0);
 }
-const CommonForm: React.FC<Props> = ({ event }) => {
+const GroupsForm: React.FC<Props> = ({ event }) => {
+  ///change this to true
+  const teamAllotted = false;
+  /////////////////////////
   const [showPayment, setShowPayment] = useState(false);
   const [alreadyRegistered, setAlreadyRegistered] = useState(false);
   const [eventDetails, setEventDetails] = useState<EventDetails | null>(null);
@@ -69,7 +72,7 @@ const CommonForm: React.FC<Props> = ({ event }) => {
         );
 
         // Success response, user not registered
-        setEventDetails(response.data.eventDetails)
+        setEventDetails(response.data.eventDetails);
         setAlreadyRegistered(response.data.eventRegistered || false);
       } catch (error) {
         const axiosError = error as AxiosError<{ message: string }>;
@@ -152,6 +155,18 @@ const CommonForm: React.FC<Props> = ({ event }) => {
       </div>
     );
   }
+  if (teamAllotted) {
+    return (
+      <div className="min-h-screen flex flex-col justify-center items-center bg-gray-900 text-white p-4">
+        <div className="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700 max-w-md w-full text-center">
+          <h1 className="text-3xl font-bold mb-4 text-blue-400">
+            🚫 Registration Closed
+          </h1>
+          <p className="text-gray-300">Please check back later for updates!</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -160,14 +175,14 @@ const CommonForm: React.FC<Props> = ({ event }) => {
           <>
             <div id="details" className="mt-5">
               <label htmlFor="details" className="text-white text-2xl pt-5">
-                Details:
+                Team Details:
               </label>
               <Input
-                label="Name"
+                label="Team Name"
                 id="name"
                 type="text"
                 register={register("name", {
-                  required: "Name is required",
+                  required: "Team-Name is required",
                 })}
                 error={errors.name?.message}
               />
@@ -178,28 +193,28 @@ const CommonForm: React.FC<Props> = ({ event }) => {
                 error={errors.gender?.message}
               />
               <div>
-              <Input
-                label="Address"
-                id="address"
-                type="text"
-                register={register("address", {
-                  required: "Address is required",
-                })}
-                error={errors.address?.message}
+                <Input
+                  label="Address"
+                  id="address"
+                  type="text"
+                  register={register("address", {
+                    required: "Address is required",
+                  })}
+                  error={errors.address?.message}
                 />
-              <Input
-                label="Contact no."
-                id="contact"
-                type="number"
-                register={register("contact", {
-                  required: "Contact number is required",
-                })}
-                error={errors.contact?.message}
+                <Input
+                  label="Contact no."
+                  id="contact"
+                  type="number"
+                  register={register("contact", {
+                    required: "Contact number is required",
+                  })}
+                  error={errors.contact?.message}
                 />
-                </div>
+              </div>
             </div>
             {eventDetails?.description && (
-               <div className="bg-blue-900/20 p-4 rounded-md text-sm text-white mb-4">
+              <div className="bg-blue-900/20 p-4 rounded-md text-sm text-white mb-4">
                 <h3 className="text-lg font-semibold mb-2 text-blue-400">
                   Event Rules:
                 </h3>
@@ -210,6 +225,7 @@ const CommonForm: React.FC<Props> = ({ event }) => {
                 </ul>
               </div>
             )}
+
             <div className="flex items-center justify-center">
               <Button label={"Continue"} type={"submit"} />
             </div>
@@ -220,7 +236,9 @@ const CommonForm: React.FC<Props> = ({ event }) => {
               Payment Section
             </h2>
             <img src="/payment.png" alt="Payment QR" className="w-48 mx-auto mb-4" />
-            <h3 className="text-white text-md">Registration Fee: ₹{eventDetails?.fee}</h3>
+            <h3 className="text-white text-md">
+              Registration Fee: ₹{eventDetails?.fee}
+            </h3>
             <Input
               label="UPI Transaction ID"
               id="transactionId"
@@ -254,4 +272,4 @@ const CommonForm: React.FC<Props> = ({ event }) => {
   );
 };
 
-export default CommonForm
+export default GroupsForm;

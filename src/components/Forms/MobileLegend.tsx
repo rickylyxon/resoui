@@ -52,17 +52,32 @@ type RegisterPayload = {
   individual: boolean;
 };
 
+type EventDetails = {
+  id: number;
+  event: string;
+  date: string;
+  fee: string;
+  description: string;
+};
 interface CheckResponse {
-  fee: number;
+  eventDetails: EventDetails;
   eventRegistered: boolean;
 }
 
+function parseRules(ruleString: string): string[] {
+  return ruleString
+    .split("-")
+    .map((rule) => rule.trim())
+    .filter((rule) => rule.length > 0);
+}
 const MobileLegend: React.FC<Props> = ({ event }) => {
   const [showPayment, setShowPayment] = useState(false);
   const [alreadyRegistered, setAlreadyRegistered] = useState(false);
-  const [fee, setFee] = useState<number | null>(null);
+  const [eventDetails, setEventDetails] = useState<EventDetails | null>(null);
   const [loading, setLoading] = useState(true);
-  const [gameRegistrationOpen, setGameRegistrationOpen] = useState<boolean | null>(null);
+  const [gameRegistrationOpen, setGameRegistrationOpen] = useState<
+    boolean | null
+  >(null);
   const {
     register,
     handleSubmit,
@@ -87,7 +102,7 @@ const MobileLegend: React.FC<Props> = ({ event }) => {
             },
           }
         );
-        setFee(response.data.fee);
+        setEventDetails(response.data.eventDetails);
         setAlreadyRegistered(response.data.eventRegistered);
       } catch (error) {
         const axiosError = error as AxiosError<{ message?: string }>;
@@ -103,7 +118,6 @@ const MobileLegend: React.FC<Props> = ({ event }) => {
             axiosError.response?.data?.message || "Something went wrong"
           );
         }
-        
       } finally {
         setLoading(false);
       }
@@ -114,8 +128,8 @@ const MobileLegend: React.FC<Props> = ({ event }) => {
         setGameRegistrationOpen(response.data.registrationOpen);
       } catch (err) {
         console.error("Error fetching registration status", err);
-        setGameRegistrationOpen(true); 
-      }finally {
+        setGameRegistrationOpen(true);
+      } finally {
         setLoading(false);
       }
     };
@@ -133,15 +147,11 @@ const MobileLegend: React.FC<Props> = ({ event }) => {
       return;
     }
     try {
-      const response = await axios.post(
-        "/users/register",
-        requestData,
-        {
-          headers: {
-            Authorization: token,
-          },
-        }
-      );
+      const response = await axios.post("/users/register", requestData, {
+        headers: {
+          Authorization: token,
+        },
+      });
       toast.success(response.data.message);
       window.location.href = "/profile";
     } catch (error) {
@@ -221,7 +231,9 @@ const MobileLegend: React.FC<Props> = ({ event }) => {
     return (
       <div className="min-h-screen flex flex-col justify-center items-center bg-gray-900 text-white p-4">
         <div className="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700 max-w-md w-full text-center">
-          <h1 className="text-3xl font-bold mb-4 text-blue-400">🚫 Registration Closed for Mobile Legends</h1>
+          <h1 className="text-3xl font-bold mb-4 text-blue-400">
+            🚫 Registration Closed for Mobile Legends
+          </h1>
           <p className="text-gray-300">Please check back later for updates!</p>
         </div>
       </div>
@@ -457,6 +469,18 @@ const MobileLegend: React.FC<Props> = ({ event }) => {
                 />
               </div>
             </div>
+            {eventDetails?.description && (
+              <div className="bg-blue-900/20 p-4 rounded-md text-sm text-white mb-4">
+                <h3 className="text-lg font-semibold mb-2 text-blue-400">
+                  Event Rules:
+                </h3>
+                <ul className="list-disc list-inside space-y-1">
+                  {parseRules(eventDetails.description).map((rule, index) => (
+                    <li key={index}>{rule}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <div className="flex items-center justify-center mt-6">
               <Button label={"Continue"} type={"submit"} />
             </div>
@@ -467,16 +491,16 @@ const MobileLegend: React.FC<Props> = ({ event }) => {
               Payment Section
             </h2>
             <img
-              src="/s.jpg"
+              src="/payment.png"
               alt="Payment QR"
               className="w-40 md:w-48 mx-auto mb-4"
             />
             <h3 className="text-white text-sm md:text-md">
-              Registration Fee: ₹{fee}
+              Registration Fee: ₹{eventDetails?.fee}
             </h3>
             <div className="space-y-4 mt-4">
               <Input
-                label="Transaction ID"
+                label="UPI Transaction ID"
                 id="transactionId"
                 type="text"
                 register={register("transactionId", {
@@ -485,7 +509,7 @@ const MobileLegend: React.FC<Props> = ({ event }) => {
                 error={errors.transactionId?.message as string}
               />
               <Input
-                label="Banking Name"
+                label="Account Holder Name"
                 id="bankingName"
                 type="text"
                 register={register("bankingName", {
