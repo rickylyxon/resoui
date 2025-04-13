@@ -5,6 +5,14 @@ const images = [
   { src: "/danceRules.png", title: "Dance Rules" },
   { src: "/cosplay.png", title: "cosplay" },
   { src: "/cosplayRules.png", title: "Cosplay Rules" },
+  { src: "/tekken.png", title: "Tekken 8" },
+  { src: "/tekkenRules.png", title: "Tekken Rules" },
+  { src: "/bgmi.png", title: "BGMI" },
+  { src: "/bgmiRules.png", title: "BGMI Rules" },
+  { src: "/mlbb.png", title: "Mobile Legends" },
+  { src: "/mlbbRules.png", title: "Mobiles Legends Rules" },
+  { src: "/fifa.png", title: "FIFA 25" },
+  { src: "/fifaRules.png", title: "FIFA 25 Rules" },
 ];
 
 function InfiniteCarousel() {
