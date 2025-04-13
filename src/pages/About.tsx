@@ -1,4 +1,17 @@
+import { useNavigate } from 'react-router-dom';
+
 const About = () => {
+  const navigate = useNavigate();
+
+  const handleRegisterClick = () => {
+    const token = localStorage.getItem("Authorization");
+    if (token) {
+      navigate("/register");
+    } else {
+      navigate("/signup");
+    }
+  };
+
   return (
     <section className="min-h-screen bg-[#0a1121] text-white px-6 py-16 flex flex-col items-center justify-center">
       {/* Background texture */}
@@ -57,14 +70,7 @@ const About = () => {
         {/* Animated CTA button */}
         <div className="mt-12">
           <button
-            onClick={() => {
-              const token = localStorage.getItem("Authorization");
-              if (token) {
-                window.location.href = "/register";
-              } else {
-                window.location.href = "/signup";
-              }
-            }}
+            onClick={handleRegisterClick}
             className="relative inline-flex items-center justify-center px-8 py-3.5 overflow-hidden font-medium group"
           >
             <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-blue-600 rounded-full group-hover:w-56 group-hover:h-56 opacity-10"></span>

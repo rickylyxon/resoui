@@ -17,16 +17,16 @@ import Signup from "./pages/Signup";
 import Error from "./pages/Error";
 import Landing from "./main/Landing";
 import User from "./main/User";
-import AdminProfile  from "./pages/Admin/AdminProfile";
-import EditEvent  from "./pages/Admin/EditEvent";
-import RegisteredUser  from "./pages/Admin/RegisteredUser";
-import SadminSignin  from "./pages/Sadmin/SadminSignin";
-import SadminProfile  from "./pages/Sadmin/SadminProfile";
-import CreateAdminEvent  from "./pages/Sadmin/CreateAdminEvent";
-import SadminAdminEvent  from "./pages/Sadmin/SadminAdminEvent";
-import SuperAdmin from "./main/Superadmin"
+import AdminProfile from "./pages/Admin/AdminProfile";
+import EditEvent from "./pages/Admin/EditEvent";
+import RegisteredUser from "./pages/Admin/RegisteredUser";
+import SadminSignin from "./pages/Sadmin/SadminSignin";
+import SadminProfile from "./pages/Sadmin/SadminProfile";
+import CreateAdminEvent from "./pages/Sadmin/CreateAdminEvent";
+import SadminAdminEvent from "./pages/Sadmin/SadminAdminEvent";
+import SuperAdmin from "./main/Superadmin";
 import Admin from "./main/Admin";
-import UserEventRegistered from "./pages/Sadmin/UserEventRegistered"
+import UserEventRegistered from "./pages/Sadmin/UserEventRegistered";
 import axios from "./utils/axios";
 
 interface AuthStatus {
@@ -54,6 +54,8 @@ function App() {
         setAuthStatus(response.data);
       } catch (error) {
         console.error("Error fetching authentication status:", error);
+        localStorage.removeItem("UserData");
+        localStorage.removeItem("Authorization");
         setAuthStatus(null);
       } finally {
         setLoading(false);
@@ -85,9 +87,18 @@ function App() {
       ) : authStatus.auth === "SUPERADMIN" ? (
         <Route path="/" element={<SuperAdmin />}>
           <Route index element={<Main />} />
-          <Route path="/superadmin/create-admin-event" element={<CreateAdminEvent />} />
-          <Route path="/superadmin/details-event-admin" element={<SadminAdminEvent />} />
-          <Route path="/superadmin/registered" element={<UserEventRegistered />} />
+          <Route
+            path="/superadmin/create-admin-event"
+            element={<CreateAdminEvent />}
+          />
+          <Route
+            path="/superadmin/details-event-admin"
+            element={<SadminAdminEvent />}
+          />
+          <Route
+            path="/superadmin/registered"
+            element={<UserEventRegistered />}
+          />
           <Route path="/superadmin/profile" element={<SadminProfile />} />
           <Route path="*" element={<Error />} />
         </Route>

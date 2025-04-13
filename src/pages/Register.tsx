@@ -61,10 +61,21 @@ const customStyles = {
 };
 
 const options: OptionType[] = [
-  { value: "tekken", label: "Tekken 7 (Gaming)" },
+  { value: "tekken8", label: "Tekken 8 (Gaming)" },
   { value: "bgmi", label: "BGMI (Gaming)" },
   { value: "mobilelegend", label: "Mobile Legend (Gaming)" },
-  { value: "fifa", label: "FC25 (Gaming)" },
+  { value: "fifa25", label: "FC25 (Gaming)" },
+  { value: "hisdustanisong", label: "Hindustani (Voice of RESO)" },
+  { value: "westernsong", label: "Western (Voice of RESO)" },
+  { value: "classicalfolkdance", label: "Classical & Folk (Dance Contest)" },
+  { value: "moderndance", label: "Modern Dance (Dance Contest)" },
+  { value: "cosplay", label: "Cosplay Contest" },
+  { value: "reels", label: "Reel Contest" },
+  { value: "painting", label: "Painting (Spot Event)" },
+  { value: "photography", label: "Photography (Spot Event)" },
+  { value: "treasurehunt", label: "Treasure Hunt (Spot Event)" },
+  { value: "quiz", label: "Quiz (Literary Event)" },
+  { value: "debate", label: "Debate (Literary Event)" },
   {
     value: "structuralmodelling",
     label: "Structural Modelling (Technical Event)",
@@ -72,29 +83,11 @@ const options: OptionType[] = [
   { value: "autocaddesign", label: "Autocad Design (Technical Event)" },
   { value: "codedebugging", label: "Code Debugging (Technical Event)" },
   { value: "codejumbling", label: "Code Jumbling (Technical Event)" },
-  { value: "projectshowcase", label: "Project Showcase (Technical Event)" },
+  { value: "posterpresentation", label: "Poster Presentation (Technical Event)" },
   { value: "circuitdesign", label: "Circuit Design (Technical Event)" },
-  { value: "paperwindmill", label: "Paper Windmill (Technical Event)" },
-  {
-    value: "machinedesignautocad",
-    label: "Machine Design Autocad (Technical Event)",
-  },
-  {
-    value: "electricalcomponent",
-    label: "Electrical Component Identification & Modelling (Technical Event)",
-  },
-  { value: "painting", label: "Painting (Spot Event)" },
-  { value: "photography", label: "Photography (Spot Event)" },
-  { value: "treasurehunt", label: "Treasure Hunt (Spot Event)" },
-  { value: "rubikcube", label: "Rubik's Cube (Spot Event)" },
-  { value: "quiz", label: "Quiz (Literary Event)" },
-  { value: "debate", label: "Debate (Literary Event)" },
-  { value: "lightvocal", label: "Light Vocal Solo (Voice of RESO)" },
-  { value: "westernsolo", label: "Western Solo Unplugged (Voice of RESO)" },
-  { value: "classicalfolk", label: "Classical & Folk (Dance Contest)" },
-  { value: "dance", label: "Modern (Dance Contest)" },
-  { value: "cosplay", label: "Cosplay Contest" },
-  { value: "reel", label: "Reel Contest" },
+  { value: "softwarecircuitmodelling", label: "Software Circuit Modelling (Technical Event)" },
+  { value: "hardwarebuildingordesigning", label: "Hardware Building / Designing (Technical Event)" },
+  { value: "showcaseexhibition", label: "Showcase Exhibition (Technical Event)" },
 ];
 
 const Register = () => {

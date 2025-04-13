@@ -1,19 +1,23 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 interface HomeProps {
   scrollToEvents: () => void;
 }
 
 const Home: React.FC<HomeProps> = ({ scrollToEvents }) => {
+  const navigate = useNavigate();
+
   const handleRegisterClick = () => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('Authorization');
     if (token) {
-      window.location.href = '/register';
+      navigate('/register');
     } else {
-      window.location.href = '/signup';
+      navigate('/signup');
     }
   };
+  
 
+  
   return (
     <div className="relative bg-gradient-to-br from-[#0a0e1a] via-[#0f172a] to-[#0a1121] min-h-screen overflow-hidden">
       {/* Background elements */}
