@@ -2,10 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 const images = [
-  { src: "/events/dance.png", title: "Dance" },
-  { src: "/events/danceRules.png", title: "Dance Rules" },
-  { src: "/events/cosplay.png", title: "cosplay" },
-  { src: "/events/cosplayRules.png", title: "Cosplay Rules" },
   { src: "/events/tekken.png", title: "Tekken 8" },
   { src: "/events/tekkenRules.png", title: "Tekken Rules" },
   { src: "/events/bgmi.png", title: "BGMI" },
@@ -14,6 +10,12 @@ const images = [
   { src: "/events/mlbbRules.png", title: "Mobiles Legends Rules" },
   { src: "/events/fifa.png", title: "FIFA 25" },
   { src: "/events/fifaRules.png", title: "FIFA 25 Rules" },
+  { src: "/events/cosplay.png", title: "cosplay" },
+  { src: "/events/cosplayRules.png", title: "Cosplay Rules" },
+  { src: "/events/dance.png", title: "Dance" },
+  { src: "/events/danceRules.png", title: "Dance Rules" },
+  { src: "/events/voiceOfReso.png", title: "Voice Of Reso" },
+  { src: "/events/voiceOfResoRules.png", title: "Voice Of Reso Rules" },
 ];
 
 const sponsors = [
