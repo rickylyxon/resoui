@@ -92,11 +92,11 @@ function InfiniteCarousel() {
 
     const animate = () => {
       position -= speed;
-      
+
       if (position <= -totalWidth) {
         position = 0;
       }
-      
+
       container.style.transform = `translateX(${position}px)`;
       requestRef.current = requestAnimationFrame(animate);
     };
@@ -151,7 +151,13 @@ function InfiniteCarousel() {
             </svg>
           </button>
 
-          <div className="relative w-full h-full flex items-center justify-center gap-1 xs:gap-2 sm:gap-3 md:gap-4">
+          <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+            {/* Left-side gradient overlay (darker version) */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 z-30 bg-gradient-to-r from-[#0A101E] via-[#0A101E]/80 to-transparent pointer-events-none"></div>
+
+            {/* Right-side gradient overlay (using #0A101E) */}
+            <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 z-30 bg-gradient-to-l from-[#0A101E] via-[#0A101E]/80 to-transparent pointer-events-none"></div>
+
             {visibleImages.map((image, idx) => {
               const isCenter = idx === 1;
               const position =
@@ -161,19 +167,19 @@ function InfiniteCarousel() {
                 <div
                   key={`${image.src}-${position}`}
                   className={`absolute transition-all duration-500 ease-in-out cursor-pointer 
-                    ${
-                      isCenter
-                        ? "z-20 w-[70%] xs:w-3/4 sm:w-2/3 h-full"
-                        : position === "left"
-                        ? "z-10 left-0 w-[18%] xs:w-[16%] sm:w-[15%] h-[50%] xs:h-[55%] sm:h-[60%] opacity-70 -translate-x-[30%] xs:-translate-x-[35%] sm:-translate-x-[40%] brightness-50 hover:brightness-75"
-                        : "z-10 right-0 w-[18%] xs:w-[16%] sm:w-[15%] h-[50%] xs:h-[55%] sm:h-[60%] opacity-70 translate-x-[30%] xs:translate-x-[35%] sm:translate-x-[40%] brightness-50 hover:brightness-75"
-                    }
-                    ${
-                      isCenter
-                        ? "hover:scale-[1.03] xs:hover:scale-105"
-                        : "hover:opacity-90 hover:scale-[1.02]"
-                    }
-                  `}
+          ${
+            isCenter
+              ? "z-20 w-[70%] xs:w-3/4 sm:w-2/3 h-full"
+              : position === "left"
+              ? "z-10 left-0 w-[22%] xs:w-[20%] sm:w-[18%] h-[50%] xs:h-[55%] sm:h-[60%] opacity-90 -translate-x-[20%] xs:-translate-x-[25%] sm:-translate-x-[35%] brightness-75 hover:brightness-90"
+              : "z-10 right-0 w-[22%] xs:w-[20%] sm:w-[18%] h-[50%] xs:h-[55%] sm:h-[60%] opacity-90 translate-x-[20%] xs:translate-x-[25%] sm:translate-x-[35%] brightness-75 hover:brightness-90"
+          }
+          ${
+            isCenter
+              ? "hover:scale-[1.03] xs:hover:scale-105"
+              : "hover:opacity-100 hover:scale-[1.02]"
+          }
+        `}
                   onClick={() => {
                     if (!isCenter) {
                       position === "left" ? prevSlide() : nextSlide();
@@ -182,31 +188,41 @@ function InfiniteCarousel() {
                     }
                   }}
                 >
-                  <div
-                    className={`relative w-full h-full rounded-md xs:rounded-lg sm:rounded-xl overflow-hidden shadow-lg sm:shadow-xl
-                    ${
-                      isCenter
-                        ? "border-2 sm:border-3 md:border-4 border-blue-400"
-                        : "border border-gray-800"
-                    }`}
-                  >
-                    <img
-                      src={image.src}
-                      alt={image.title}
-                      className={`w-full h-full object-cover ${
-                        !isCenter && "filter grayscale-[20%]"
-                      }`}
-                      loading="lazy"
-                    />
+                  <div className="relative w-full h-full">
+                    {/* Dark gradient overlay for left side image */}
+                    {position === "left" && (
+                      <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-black/80 to-transparent z-10" />
+                    )}
+
+                    {/* Dark gradient overlay for right side image */}
+                    {position === "right" && (
+                      <div className="absolute left-0 top-0 bottom-0 w-1/3 bg-gradient-to-r from-black/80 to-transparent z-10" />
+                    )}
+
                     <div
-                      className={`absolute bottom-0 left-0 right-0 p-1.5 xs:p-2 sm:p-3 md:p-4 bg-gradient-to-t from-black/80 to-transparent 
-                      ${
-                        isCenter ? "opacity-100" : "opacity-0"
-                      } transition-opacity`}
+                      className={`relative w-full h-full rounded-md xs:rounded-lg sm:rounded-xl overflow-hidden shadow-lg sm:shadow-xl
+              ${
+                isCenter
+                  ? "border-2 sm:border-3 md:border-4 border-blue-400"
+                  : "border border-gray-800"
+              }`}
                     >
-                      <h3 className="text-white font-bold text-xs xs:text-sm sm:text-base md:text-lg">
-                        {image.title}
-                      </h3>
+                      <img
+                        src={image.src}
+                        alt={image.title}
+                        className={`w-full h-full object-cover ${
+                          !isCenter && "filter grayscale-[10%]"
+                        }`}
+                        loading="lazy"
+                      />
+                      <div
+                        className={`absolute bottom-0 left-0 right-0 p-1.5 xs:p-2 sm:p-3 md:p-4 bg-gradient-to-t from-black/80 to-transparent 
+                ${isCenter ? "opacity-100" : "opacity-0"} transition-opacity`}
+                      >
+                        <h3 className="text-white font-bold text-xs xs:text-sm sm:text-base md:text-lg">
+                          {image.title}
+                        </h3>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -260,8 +276,10 @@ function InfiniteCarousel() {
           </h2>
 
           <div className="relative w-full h-32 sm:h-40 md:h-48 overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 z-10 bg-gradient-to-r from-[#0a0e1a] to-transparent"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 z-10 bg-gradient-to-l from-[#0a0e1a] to-transparent"></div>
+            <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 z-30 bg-gradient-to-r from-[#0A101E] via-[#0A101E]/80 to-transparent pointer-events-none"></div>
+
+            {/* Right-side gradient overlay (using #0A101E) */}
+            <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 z-30 bg-gradient-to-l from-[#0A101E] via-[#0A101E]/80 to-transparent pointer-events-none"></div>
 
             <div
               ref={sponsorsContainerRef}
