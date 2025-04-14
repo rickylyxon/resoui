@@ -70,7 +70,7 @@ const options: OptionType[] = [
   { value: "bgmi", label: "BGMI (Gaming)" },
   { value: "mobilelegend", label: "Mobile Legend (Gaming)" },
   { value: "fifa25", label: "FC25 (Gaming)" },
-  { value: "hisdustanisong", label: "Hindustani (Voice of RESO)" },
+  { value: "hindustanisong", label: "Hindustani (Voice of RESO)" },
   { value: "westernsong", label: "Western (Voice of RESO)" },
   { value: "classicalfolkdancegroup", label: "Classical & Folk Group (Dance Contest)" },
   { value: "classicalfolkdancesolo", label: "Classical & Folk Solo (Dance Contest)" },
