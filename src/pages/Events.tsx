@@ -16,6 +16,8 @@ const images = [
   { src: "/events/danceRules.png", title: "Dance Rules" },
   { src: "/events/voiceOfReso.png", title: "Voice Of Reso" },
   { src: "/events/voiceOfResoRules.png", title: "Voice Of Reso Rules" },
+  { src: "/events/reels.png", title: "Reels Contest" },
+  { src: "/events/reelsRules.png", title: "Reels Rules" },
 ];
 
 const sponsors = [
@@ -28,6 +30,11 @@ const sponsors = [
     src: "/sponsor/xeonPlay.jpg",
     name: "Xeon Play",
     url: "https://www.facebook.com/kyoftxeon",
+  },
+  {
+    src: "/sponsor/pb.jpeg",
+    name: "PB",
+    url: "https://www.instagram.com/pb_car_and_bike_rental_service/",
   },
 ];
 
@@ -88,7 +95,7 @@ function InfiniteCarousel() {
 
     const itemWidth = items[0].clientWidth;
     const gap = 40;
-    const speed = 1;
+    const speed = 0.6;
     let position = 0;
     const totalWidth = (itemWidth + gap) * sponsors.length;
 
@@ -297,7 +304,7 @@ function InfiniteCarousel() {
                     href={sponsor.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full h-full flex items-center justify-center p-2 sm:p-3 bg-white/10 backdrop-blur-sm rounded-lg hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full flex items-center justify-center p-2 sm:p-3 bg-white/10 backdrop-blur-sm rounded-lg hover:scale-105 transition-transform duration-500"
                   >
                     <img
                       src={sponsor.src}
