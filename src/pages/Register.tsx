@@ -81,7 +81,7 @@ const options: OptionType[] = [
   // { value: "painting", label: "Painting (Spot Event)" },
   // { value: "photography", label: "Photography (Spot Event)" },
   // { value: "treasurehunt", label: "Treasure Hunt (Spot Event)" },
-  // { value: "quiz", label: "Quiz (Literary Event)" },
+  { value: "quiz", label: "Quiz (Literary Event)" },
   // { value: "debate", label: "Debate (Literary Event)" },
   // {
   //   value: "structuralmodelling",

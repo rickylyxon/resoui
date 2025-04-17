@@ -18,6 +18,8 @@ const images = [
   { src: "/events/voiceOfResoRules.png", title: "Voice Of Reso Rules" },
   { src: "/events/reels.png", title: "Reels Contest" },
   { src: "/events/reelsRules.png", title: "Reels Rules" },
+  { src: "/events/quiz.png", title: "Quiz Contest" },
+  { src: "/events/quizRules.png", title: "Quiz Rules" },
 ];
 
 const sponsors = [
