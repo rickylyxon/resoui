@@ -20,6 +20,9 @@ const images = [
   { src: "/events/reelsRules.png", title: "Reels Rules" },
   { src: "/events/quiz.png", title: "Quiz Contest" },
   { src: "/events/quizRules.png", title: "Quiz Rules" },
+  { src: "/events/codedebugging.png", title: "Code Debugging" },
+  { src: "/events/codejumbling.png", title: "Code Jumbling" },
+  { src: "/events/electricalevent.png", title: "Electrical Events" },
 ];
 
 const sponsors = [
