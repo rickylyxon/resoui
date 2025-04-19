@@ -6,8 +6,6 @@ import { Quantum } from "ldrs/react";
 import CommonForm from "../components/Forms/CommonForm";
 import axios from "../utils/axios";
 import { Toaster } from "react-hot-toast";
-import StructuralModelling from "../components/Forms/StructuralModelling";
-import Windmill from "../components/Forms/Windmill";
 import GroupCommonForm from "../components/Forms/GroupCommonForm";
 import GroupsForm from "../components/Forms/GroupsForm";
 import Reel from "../components/Forms/Reel";
@@ -83,27 +81,24 @@ const options: OptionType[] = [
   // { value: "treasurehunt", label: "Treasure Hunt (Spot Event)" },
   { value: "quiz", label: "Quiz (Literary Event)" },
   // { value: "debate", label: "Debate (Literary Event)" },
-  // {
-  //   value: "structuralmodelling",
-  //   label: "Structural Modelling (Technical Event)",
-  // },
-  // {
-  //   value: "windmill",
-  //   label: "Windmill Design (Technical Event)",
-  // },
-  // {
-  //   value: "origami",
-  //   label: "Origami Design (Technical Event)",
-  // },
-  // { value: "autocaddesign", label: "Autocad Design (Technical Event)" },
   { value: "codedebugging", label: "Code Debugging - CSE - (Technical Event)" },
   { value: "codejumbling", label: "Code Jumbling - CSE - (Technical Event)" },
+  {
+    value: "structuralmodelling",
+    label: "Structural Modelling - CE - (Technical Event)",
+  },
+  { value: "autocaddesign", label: "Autocad Design - CE - (Technical Event)" },
+  {
+    value: "paperplane",
+    label: "Paper Plane Design - ME - (Technical Event)",
+  },
+  {
+    value: "origami",
+    label: "Origami Engineering - ME - (Technical Event)",
+  },
   { value: "mindmapmania", label: "Mind Map Mania - EE - (Technical Event)" },
   { value: "innovista", label: "Innovista - EE - (Technical Event)" },
   { value: "circuitscript", label: "Circuit Script - EE - (Technical Event)" },
-  // { value: "softwarecircuitmodelling", label: "Software Circuit Modelling (Technical Event)" },
-  // { value: "hardwarebuildingordesigning", label: "Hardware Building / Designing (Technical Event)" },
-  // { value: "showcaseexhibition", label: "Showcase Exhibition (Technical Event)" },
   { value: "circuitdesign", label: "Circuit Design - ECE - (Technical Event)" },
   { value: "componentanalysis", label: "Component Analysis - ECE - (Technical Event)" },
 ];
@@ -115,8 +110,6 @@ const Register = () => {
   const specialComponents: Record<string, React.ElementType> = {
     bgmi: Bgmi,
     mobilelegend: MobileLegend,
-    structuralmodelling :StructuralModelling,
-    windmill : Windmill,
     westernsong : GroupCommonForm,
     moderndancegroup : GroupsForm,
     classicalfolkdancegroup : GroupsForm,

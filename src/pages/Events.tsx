@@ -20,11 +20,17 @@ const images = [
   { src: "/events/reelsRules.png", title: "Reels Rules" },
   { src: "/events/quiz.png", title: "Quiz Contest" },
   { src: "/events/quizRules.png", title: "Quiz Rules" },
+  // { src: "/events/debate.png", title: "Debate" },
+  // { src: "/events/debateRules.png", title: "Debate Rules" },
   { src: "/events/codedebugging.png", title: "Code Debugging" },
   { src: "/events/codejumbling.png", title: "Code Jumbling" },
   { src: "/events/electricalevent.png", title: "Electrical Events" },
   { src: "/events/circuitdesign.png", title: "Circuit Design" },
   { src: "/events/componentanalysis.png", title: "Component Analysis" },
+  { src: "/events/autocad.png", title: "Autocad Designing" },
+  { src: "/events/structuralmodelling.png", title: "Structural Modelling" },
+  { src: "/events/paperplane.png", title: "Paper Plane Design" },
+  { src: "/events/origami.png", title: "Origami Engineering" },
 ];
 
 const sponsors = [
