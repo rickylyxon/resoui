@@ -57,6 +57,7 @@ function App() {
         localStorage.removeItem("UserData");
         localStorage.removeItem("Authorization");
         setAuthStatus(null);
+        window.location.href = "/";
       } finally {
         setLoading(false);
       }

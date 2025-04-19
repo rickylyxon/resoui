@@ -98,14 +98,14 @@ const options: OptionType[] = [
   // { value: "autocaddesign", label: "Autocad Design (Technical Event)" },
   { value: "codedebugging", label: "Code Debugging - CSE - (Technical Event)" },
   { value: "codejumbling", label: "Code Jumbling - CSE - (Technical Event)" },
-  // { value: "circuitdesign", label: "Circuit Design -E.C.E.- (Technical Event)" },
-  // { value: "componentanalysis", label: "Component Analysis -E.C.E.- (Technical Event)" },
   { value: "mindmapmania", label: "Mind Map Mania - EE - (Technical Event)" },
   { value: "innovista", label: "Innovista - EE - (Technical Event)" },
   { value: "circuitscript", label: "Circuit Script - EE - (Technical Event)" },
   // { value: "softwarecircuitmodelling", label: "Software Circuit Modelling (Technical Event)" },
   // { value: "hardwarebuildingordesigning", label: "Hardware Building / Designing (Technical Event)" },
   // { value: "showcaseexhibition", label: "Showcase Exhibition (Technical Event)" },
+  { value: "circuitdesign", label: "Circuit Design - ECE - (Technical Event)" },
+  { value: "componentanalysis", label: "Component Analysis - ECE - (Technical Event)" },
 ];
 
 const Register = () => {

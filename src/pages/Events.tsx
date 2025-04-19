@@ -23,6 +23,8 @@ const images = [
   { src: "/events/codedebugging.png", title: "Code Debugging" },
   { src: "/events/codejumbling.png", title: "Code Jumbling" },
   { src: "/events/electricalevent.png", title: "Electrical Events" },
+  { src: "/events/circuitdesign.png", title: "Circuit Design" },
+  { src: "/events/componentanalysis.png", title: "Component Analysis" },
 ];
 
 const sponsors = [
