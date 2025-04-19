@@ -76,11 +76,11 @@ const options: OptionType[] = [
   { value: "moderndancesolo", label: "Modern Dance Solo (Dance Contest)" },
   { value: "cosplay", label: "Cosplay Contest" },
   { value: "reel", label: "Reel Contest" },
-  // { value: "painting", label: "Painting (Spot Event)" },
-  // { value: "photography", label: "Photography (Spot Event)" },
-  // { value: "treasurehunt", label: "Treasure Hunt (Spot Event)" },
+  { value: "spotpanting", label: "Painting (Spot Event)" },
+  { value: "spotphotography", label: "Photography (Spot Event)" },
+  { value: "treasurehunt", label: "Treasure Hunt (Spot Event)" },
   { value: "quiz", label: "Quiz (Literary Event)" },
-  // { value: "debate", label: "Debate (Literary Event)" },
+  { value: "debate", label: "Debate (Literary Event)" },
   { value: "codedebugging", label: "Code Debugging - CSE - (Technical Event)" },
   { value: "codejumbling", label: "Code Jumbling - CSE - (Technical Event)" },
   {
@@ -115,6 +115,7 @@ const Register = () => {
     classicalfolkdancegroup : GroupsForm,
     debate:GroupsForm,
     quiz:GroupsForm,
+    treasurehunt:GroupsForm,
     reel: Reel,
   };
 
