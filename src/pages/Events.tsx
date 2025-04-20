@@ -21,7 +21,6 @@ const images = [
   { src: "/events/quiz.png", title: "Quiz Contest" },
   { src: "/events/quizRules.png", title: "Quiz Rules" },
   { src: "/events/debate.png", title: "Debate" },
-  { src: "/events/debateRules.png", title: "Debate Rules" },
   { src: "/events/panting.png", title: "Spot Panting" },
   { src: "/events/photography.png", title: "Spot Photography" },
   { src: "/events/treasurehunt.png", title: "Treasure Hunt" },
@@ -51,6 +50,11 @@ const sponsors = [
     src: "/sponsor/pb.jpeg",
     name: "PB",
     url: "https://www.instagram.com/pb_car_and_bike_rental_service/",
+  },
+  {
+    src: "/sponsor/PhoneTOO.jpg",
+    name: "PhoneTOO",
+    url: "https://www.instagram.com/phonetoo_manipur",
   },
 ];
 
