@@ -19,7 +19,6 @@ const images = [
   { src: "/events/reels.png", title: "Reels Contest" },
   { src: "/events/reelsRules.png", title: "Reels Rules" },
   { src: "/events/quiz.png", title: "Quiz Contest" },
-  { src: "/events/quizRules.png", title: "Quiz Rules" },
   { src: "/events/debate.png", title: "Debate" },
   { src: "/events/panting.png", title: "Spot Panting" },
   { src: "/events/photography.png", title: "Spot Photography" },
@@ -55,6 +54,11 @@ const sponsors = [
     src: "/sponsor/PhoneTOO.jpg",
     name: "PhoneTOO",
     url: "https://www.instagram.com/phonetoo_manipur",
+  },
+  {
+    src: "/sponsor/babina.png",
+    name: "Babina",
+    url: "https://www.instagram.com/babina_diagnostics/",
   },
 ];
 
