@@ -491,7 +491,7 @@ const MobileLegend: React.FC<Props> = ({ event }) => {
               Payment Section
             </h2>
             <img
-              src="/payment.png"
+              src="/payment.jpeg"
               alt="Payment QR"
               className="w-40 md:w-48 mx-auto mb-4"
             />
