@@ -60,6 +60,11 @@ const sponsors = [
     name: "Babina",
     url: "https://www.instagram.com/babina_diagnostics/",
   },
+  {
+    src: "/sponsor/machu.jpg",
+    name: "Machu",
+    url: "https://www.instagram.com/machu_home_for_dyeing",
+  },
 ];
 
 function InfiniteCarousel() {
