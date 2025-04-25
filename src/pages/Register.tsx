@@ -66,12 +66,8 @@ const customStyles = {
 const options: OptionType[] = [
   { value: "tekken8", label: "Tekken 8 (Gaming)" },
   { value: "bgmi", label: "BGMI (Gaming)" },
-  { value: "mobilelegend", label: "Mobile Legend (Gaming)" },
   { value: "fifa25", label: "FC25 (Gaming)" },
   { value: "classicalfolkdancegroup", label: "Classical & Folk Group (Dance Contest)" },
-  { value: "classicalfolkdancesolo", label: "Classical & Folk Solo (Dance Contest)" },
-  { value: "moderndancegroup", label: "Modern Dance Group (Dance Contest)" },
-  { value: "moderndancesolo", label: "Modern Dance Solo (Dance Contest)" },
   { value: "cosplay", label: "Cosplay Contest" },
   { value: "reel", label: "Reel Contest" },
   { value: "spotpanting", label: "Painting (Spot Event)" },
