@@ -66,6 +66,7 @@ const customStyles = {
 const options: OptionType[] = [
   { value: "tekken8", label: "Tekken 8 (Gaming)" },
   { value: "bgmi", label: "BGMI (Gaming)" },
+  { value: "mobilelegend", label: "Mobile Legend (Gaming)" },
   { value: "fifa25", label: "FC25 (Gaming)" },
   { value: "classicalfolkdancegroup", label: "Classical & Folk Group (Dance Contest)" },
   { value: "cosplay", label: "Cosplay Contest" },
