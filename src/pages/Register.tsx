@@ -74,7 +74,6 @@ const options: OptionType[] = [
   { value: "spotpanting", label: "Painting (Spot Event)" },
   { value: "spotphotography", label: "Photography (Spot Event)" },
   { value: "treasurehunt", label: "Treasure Hunt (Spot Event)" },
-  { value: "quiz", label: "Quiz (Literary Event)" },
   { value: "debate", label: "Debate (Literary Event)" },
   { value: "codedebugging", label: "Code Debugging - CSE - (Technical Event)" },
   { value: "codejumbling", label: "Code Jumbling - CSE - (Technical Event)" },
