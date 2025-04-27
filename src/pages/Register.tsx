@@ -64,36 +64,36 @@ const customStyles = {
 };
 
 const options: OptionType[] = [
-  { value: "tekken8", label: "Tekken 8 (Gaming)" },
-  { value: "bgmi", label: "BGMI (Gaming)" },
-  { value: "mobilelegend", label: "Mobile Legend (Gaming)" },
+  // { value: "tekken8", label: "Tekken 8 (Gaming)" },
+  // { value: "bgmi", label: "BGMI (Gaming)" },
+  // { value: "mobilelegend", label: "Mobile Legend (Gaming)" },
   // { value: "classicalfolkdancegroup", label: "Classical & Folk Group (Dance Contest)" },
   { value: "cosplay", label: "Cosplay Contest" },
-  { value: "reel", label: "Reel Contest" },
-  { value: "spotpanting", label: "Painting (Spot Event)" },
-  { value: "spotphotography", label: "Photography (Spot Event)" },
-  { value: "treasurehunt", label: "Treasure Hunt (Spot Event)" },
-  { value: "debate", label: "Debate (Literary Event)" },
-  { value: "codedebugging", label: "Code Debugging - CSE - (Technical Event)" },
-  { value: "codejumbling", label: "Code Jumbling - CSE - (Technical Event)" },
-  {
-    value: "structuralmodelling",
-    label: "Structural Modelling - CE - (Technical Event)",
-  },
-  { value: "autocaddesign", label: "Autocad Design - CE - (Technical Event)" },
-  {
-    value: "paperplane",
-    label: "Paper Plane Design - ME - (Technical Event)",
-  },
-  {
-    value: "origami",
-    label: "Origami Engineering - ME - (Technical Event)",
-  },
-  { value: "mindmapmania", label: "Mind Map Mania - EE - (Technical Event)" },
-  { value: "innovista", label: "Innovista - EE - (Technical Event)" },
-  { value: "circuitscript", label: "Circuit Script - EE - (Technical Event)" },
-  { value: "circuitdesign", label: "Circuit Design - ECE - (Technical Event)" },
-  { value: "componentanalysis", label: "Component Analysis - ECE - (Technical Event)" },
+  // { value: "reel", label: "Reel Contest" },
+  // { value: "spotpanting", label: "Painting (Spot Event)" },
+  // { value: "spotphotography", label: "Photography (Spot Event)" },
+  // { value: "treasurehunt", label: "Treasure Hunt (Spot Event)" },
+  // { value: "debate", label: "Debate (Literary Event)" },
+  // { value: "codedebugging", label: "Code Debugging - CSE - (Technical Event)" },
+  // { value: "codejumbling", label: "Code Jumbling - CSE - (Technical Event)" },
+  // {
+  //   value: "structuralmodelling",
+  //   label: "Structural Modelling - CE - (Technical Event)",
+  // },
+  // { value: "autocaddesign", label: "Autocad Design - CE - (Technical Event)" },
+  // {
+  //   value: "paperplane",
+  //   label: "Paper Plane Design - ME - (Technical Event)",
+  // },
+  // {
+  //   value: "origami",
+  //   label: "Origami Engineering - ME - (Technical Event)",
+  // },
+  // { value: "mindmapmania", label: "Mind Map Mania - EE - (Technical Event)" },
+  // { value: "innovista", label: "Innovista - EE - (Technical Event)" },
+  // { value: "circuitscript", label: "Circuit Script - EE - (Technical Event)" },
+  // { value: "circuitdesign", label: "Circuit Design - ECE - (Technical Event)" },
+  // { value: "componentanalysis", label: "Component Analysis - ECE - (Technical Event)" },
 ];
 
 const Register = () => {
