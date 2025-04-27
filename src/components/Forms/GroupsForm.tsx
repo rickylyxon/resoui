@@ -235,7 +235,7 @@ const GroupsForm: React.FC<Props> = ({ event }) => {
             <h2 className="text-white text-xl font-bold mb-4">
               Payment Section
             </h2>
-            <img src="/qrreso.jpeg" alt="Payment QR" className="w-48 mx-auto mb-4" />
+            <img src="/payment.jpeg" alt="Payment QR" className="w-48 mx-auto mb-4" />
             <h3 className="text-white text-md">
               Registration Fee: ₹{eventDetails?.fee}
             </h3>
